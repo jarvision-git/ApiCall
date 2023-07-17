@@ -18,7 +18,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface MarsApiService {
-    @GET("3bededad-5a97-4247-8324-7de913a51388")
+    @GET("7ad62fa6-b164-487a-9b24-fe7d2204f220")
     suspend fun getPhotos(): List<detail>
 }
 
