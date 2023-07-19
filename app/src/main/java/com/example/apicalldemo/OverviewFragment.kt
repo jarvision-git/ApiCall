@@ -6,7 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.viewModelScope
 import com.example.apicalldemo.databinding.FragmentOverviewBinding
+import kotlinx.coroutines.launch
 
 class OverviewFragment : Fragment() {
 
@@ -28,6 +33,15 @@ class OverviewFragment : Fragment() {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
+
+        binding.btnNext.setOnClickListener { view ->
+            viewModel.launchDetail()
+        }
+
         return binding.root
+
+
     }
+
+
 }
